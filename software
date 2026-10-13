@@ -1,0 +1,111 @@
+Gatthak Deng Biel - Assignment: Practical Development Setup
+Student Name: Gatthak Deng Biel
+Assignment: Practical Development Setup
+Date: 13 October 2026
+Task 1: Flutter and Dart Environment Setup
+1. Verify Flutter Installation
+I used the following command to verify my Flutter installation:
+flutter doctor
+This command checks whether Flutter is installed correctly and identifies any missing dependencies or configuration issues.
+Flutter Doctor Output:
+[Insert your actual flutter doctor output or a screenshot here.]
+2. Create a Flutter Application
+I created a new Flutter application named my_first_app using the following commands:
+flutter create my_first_app
+cd my_first_app
+flutter devices
+The flutter create my_first_app command creates a new Flutter project. The cd my_first_app command opens the project directory, and flutter devices lists the available devices that can run the application.
+Flutter Devices Output:
+[Insert your actual output or screenshot here.]
+3. Difference Between Hot Reload and Hot Restart
+Hot Reload: Hot Reload updates the application's code while keeping its current state. It allows developers to see changes quickly without restarting the entire application.
+Hot Restart: Hot Restart restarts the Flutter application and resets its current state. It is useful when changes require the application to start again from the beginning.
+Both features help developers test and develop Flutter applications more efficiently.
+Task 2: MySQL Database Management
+1. Create a Database and Students Table
+I used MySQL Workbench to create a database named school and a table named students.
+The SQL commands are:
+CREATE DATABASE IF NOT EXISTS school;
+
+USE school;
+
+CREATE TABLE IF NOT EXISTS students (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100),
+    email VARCHAR(150) UNIQUE,
+    enrolled_on DATE
+);
+The database stores student information. The id column uniquely identifies each student, name stores the student's name, email stores a unique email address, and enrolled_on records the enrollment date.
+2. Insert Sample Records
+I inserted two sample student records into the table.
+INSERT INTO students (name, email, enrolled_on)
+VALUES
+('Alice Johnson', 'alice@example.com', '2026-10-01'),
+('Brian Smith', 'brian@example.com', '2026-10-02');
+3. Retrieve Student Records
+I used the following query to display the records:
+SELECT * FROM students;
+MySQL Workbench Screenshot:
+[Insert your actual screenshot showing the SQL query and the results grid here.]
+4. Database Security
+Database security helps protect information against unauthorized access. A database administrator can create a separate user for an application and grant only the permissions it requires.
+Example:
+CREATE USER 'school_app'@'localhost'
+IDENTIFIED BY 'ReplaceWithYourOwnStrongPassword';
+
+GRANT SELECT, INSERT, UPDATE
+ON school.students
+TO 'school_app'@'localhost';
+The password in this example should be replaced with a strong, unique password before running the commands. The granted permissions allow the application user to read, insert, and update student records without granting unnecessary privileges.
+Task 3: Python Virtual Environment Setup
+1. Create a Project Folder
+I created a folder named python_setup_lab to organize my Python project.
+mkdir python_setup_lab
+cd python_setup_lab
+2. Create and Activate a Virtual Environment
+I created a virtual environment named venv and activated it using the following Windows PowerShell commands:
+python -m venv venv
+.\venv\Scripts\Activate.ps1
+After activation, the terminal displays (venv) at the beginning of the prompt.
+3. Install the Requests Package
+I installed the requests package using:
+python -m pip install requests
+I checked the installed packages with:
+python -m pip list
+4. Generate requirements.txt
+I created a requirements.txt file to record the installed Python packages:
+python -m pip freeze > requirements.txt
+This file helps another developer install the project's dependencies in a separate environment using:
+python -m pip install -r requirements.txt
+Python Setup Screenshot:
+[Insert your actual screenshot showing the activated virtual environment and the project files here.]
+Task 4: Visual Studio Code Workspace Setup
+1. Install Required Extensions
+I installed the following extensions in Visual Studio Code:
+Python — Microsoft
+Pylance — Microsoft
+Dart — Dart Code
+Flutter — Dart Code
+MySQL — a suitable MySQL extension
+These extensions provide support for Python development, code analysis, Flutter and Dart development, and MySQL database work.
+2. Select the Python Interpreter
+I selected the Python interpreter inside my project's virtual environment.
+Interpreter path:
+C:\Users\PC\python_setup_lab\venv\Scripts\python.exe
+Selecting this interpreter ensures that Visual Studio Code uses the Python environment where the project's dependencies are installed.
+3. Open the Integrated Terminal
+I opened the integrated terminal using Terminal → New Terminal. I activated the virtual environment when necessary and checked that (venv) appeared in the terminal prompt.
+Visual Studio Code Screenshot:
+[Insert your actual screenshot showing the project folder, installed extensions, selected Python interpreter if visible, and terminal here.]
+Conclusion
+This assignment helped me practice setting up a Flutter development environment, creating and managing a MySQL database, configuring a Python virtual environment, and preparing Visual Studio Code for development.
+I also learned how to install dependencies, record them in requirements.txt, run SQL queries, and use the appropriate development tools for different programming tasks.
+These skills provide a foundation for building, testing, and managing software projects.
+
+
+
+
+
+
+
+
